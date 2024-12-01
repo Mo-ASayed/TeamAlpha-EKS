@@ -11,9 +11,6 @@ resource "aws_vpc" "main" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
 
-  lifecycle {
-    prevent_destroy = true
-  }
 
   tags = {
     Name = var.igw_name
@@ -25,9 +22,6 @@ resource "aws_subnet" "public-subnet" {
   cidr_block        = "10.0.1.0/24"
   availability_zone = "eu-west-2a"
 
-  lifecycle {
-    prevent_destroy = true
-  }
 
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
@@ -40,9 +34,7 @@ resource "aws_subnet" "public-subnet-b" {
   cidr_block        = "10.0.2.0/24"
   availability_zone = "eu-west-2b"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
 
 
   tags = {
@@ -56,9 +48,7 @@ resource "aws_subnet" "public-subnet-c" {
   cidr_block        = "10.0.3.0/24"
   availability_zone = "eu-west-2c"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
 
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
@@ -71,9 +61,7 @@ resource "aws_subnet" "private-subnet" {
   cidr_block        = "10.0.4.0/24"
   availability_zone = "eu-west-2a"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
 
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
@@ -86,9 +74,7 @@ resource "aws_subnet" "private-subnet-b" {
   cidr_block        = "10.0.5.0/24"
   availability_zone = "eu-west-2b"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
 
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
@@ -101,9 +87,7 @@ resource "aws_subnet" "private-subnet-c" {
   cidr_block        = "10.0.6.0/24"
   availability_zone = "eu-west-2c"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
 
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
@@ -124,9 +108,7 @@ resource "aws_nat_gateway" "nat-gateway" {
   subnet_id     = aws_subnet.public-subnet.id
   allocation_id = aws_eip.nat_eip.id
 
-  lifecycle {
-    prevent_destroy = true
-  }
+
   
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
