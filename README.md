@@ -4,7 +4,7 @@ In this project, we deployed applications using EKS, provisioned using Terraform
 
 ## Architecture diagram:
 
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/kowserhassan/Desktop/alpha/TeamAlpha-EKS/architecturaldiagram.eks.png?version%3D1733077319636)
+![alt text](architecturaldiagram.eks.png)
 
 ## Tech Stack:
  
