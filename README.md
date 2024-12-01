@@ -1,4 +1,4 @@
-# 2048 App Deployment Project
+# Production-grade multi-app EKS deployment
 
 This project focuses on deploying a fully containerised 2048 game application on AWS EKS (Elastic Kubernetes Service). The infrastructure is provisioned using Terraform for consistency and scalability. CI/CD pipelines have been implemented using GitHub Actions to automate the deployment process, and monitoring tools like Prometheus and Grafana are configured to provide real-time insights into application performance and infrastructure health.
 
@@ -47,3 +47,24 @@ The deployment architecture is designed with scalability, reliability, and obser
    - Grafana dashboards provide detailed visualisation for proactive monitoring.
 
 ---
+
+### Prometheus and Grafana Dashboard
+
+Prometheus and Grafana are integrated into the deployment for real-time monitoring and observability of the Kubernetes cluster and applications.
+
+- **Prometheus**: Used as the primary data collection and query backend. It scrapes metrics from Kubernetes components, application workloads, and infrastructure, providing detailed insights into resource usage and performance.
+- **Grafana**: A visualisation tool layered on top of Prometheus, offering interactive dashboards and query options for monitoring cluster health, resource utilisation, and application performance.
+
+#### Key Features:
+- **Cluster Monitoring**: Dashboards include metrics like CPU utilisation, memory usage, and pod health across namespaces.
+- **Custom Dashboards**: User-defined dashboards are set up for detailed application-specific monitoring.
+- **Alerting**: Alerts can be configured in Prometheus and visualised in Grafana for proactive response to critical issues.
+
+## ArgoCD
+ArgoCD is used to implement a GitOps workflow, ensuring that the Kubernetes cluster state is always in sync with the desired state defined in Git repositories.
+
+### Key Features:
+- Automated Deployments: ArgoCD continuously monitors the Git repository for changes and applies them to the cluster. 
+- Declarative Configuration: All resources, including deployments, services, and ingress rules, are defined as code in Git.
+- Application Health Monitoring: The ArgoCD dashboard provides real-time application health and sync status, ensuring transparency and traceability.
+
