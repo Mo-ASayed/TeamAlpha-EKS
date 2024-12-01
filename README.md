@@ -60,6 +60,11 @@ Prometheus and Grafana are integrated into the deployment for real-time monitori
 - **Custom Dashboards**: User-defined dashboards are set up for detailed application-specific monitoring.
 - **Alerting**: Alerts can be configured in Prometheus and visualised in Grafana for proactive response to critical issues.
 
+![alt text](grafana.png)
+grafana dashboard
+
+
+
 ## ArgoCD
 ArgoCD is used to implement a GitOps workflow, ensuring that the Kubernetes cluster state is always in sync with the desired state defined in Git repositories.
 
@@ -68,3 +73,4 @@ ArgoCD is used to implement a GitOps workflow, ensuring that the Kubernetes clus
 - Declarative Configuration: All resources, including deployments, services, and ingress rules, are defined as code in Git.
 - Application Health Monitoring: The ArgoCD dashboard provides real-time application health and sync status, ensuring transparency and traceability.
 
+![alt text](argoCD.png)
