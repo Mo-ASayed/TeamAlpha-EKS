@@ -1,0 +1,17 @@
+server:
+  extraArgs:  
+  - --insecure
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: false
+    ingressClassName: "nginx"
+    annotations:
+      nginx.org/hsts: "false"
+      cert-manager.io/cluster-issuer: issuer
+    hosts:
+    - argocd.labs.mustafamirreh.com
+    tls:
+    - secretName: wildcard-tls
+      hosts:
+      - argocd.labs.mustafamirreh.com
