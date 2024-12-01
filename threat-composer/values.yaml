@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: 590184076390.dkr.ecr.eu-west-2.amazonaws.com/eks-project
+  repository: 590184076390.dkr.ecr.eu-west-2.amazonaws.com/alpha
   tag: "latest"
   pullPolicy: Always
 
